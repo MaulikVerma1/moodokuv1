@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woodoku Multiplayer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="room-join">
+        <input type="text" id="room-id" placeholder="Enter Room ID">
+        <button id="join-btn">Join Room</button>
+    </div>
+
+    <div id="game" style="display: none;">
+        <div id="board"></div>
+
+        <div id="pieces"></div>
+
+        <div id="timer">
+            Time: <span id="time">05:00</span>
+        </div>
+
+        <div id="score">
+            <span id="my-score">My Score: 0</span> - <span id="opponent-score">Opponent Score: 0</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+#room-join {
+    margin-bottom: 20px;
+}
+
+#room-id {
+    padding: 5px;
+    font-size: 16px;
+}
+
+#join-btn {
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#join-btn:hover {
+    background-color: #45a049;
+}
+
+#game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(9, 50px);
+    grid-template-rows: repeat(9, 50px);
+    gap: 2px;
+    margin-bottom: 20px;
+    background-color: #d2b48c;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    background-color: #f5deb3;
+    border: 1px solid #8b4513;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.cell.filled {
+    background-color: #8b4513;
+    background-image: url('wood-texture.jpg'); /* Add a wood texture image */
+    background-size: cover;
+}
+
+.cell.highlight {
+    background-color: rgba(0, 255, 0, 0.3);
+}
+
+#pieces {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.piece {
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    background-color: #d2b48c;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.piece-row {
+    display: flex;
+}
+
+.piece .cell {
+    width: 30px;
+    height: 30px;
+}
+
+#timer, #score {
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+.piece[draggable="true"] {
+    cursor: grab;
+}
+
+.piece[draggable="true"]:active {
+    cursor: grabbing;
+}
+
+.piece.removed {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.piece.new {
+    transform: translateX(100%);
+    opacity: 0;
+}
